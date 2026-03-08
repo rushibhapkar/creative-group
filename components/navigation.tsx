@@ -3,6 +3,9 @@
 import { useState, useEffect } from 'react';
 import { Menu, X, Phone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import Image from 'next/image';
+// Import the logo directly to handle the unusual double extension safely
+import LogoImg from '@/app/assests/logo.jpg.jpeg'; 
 
 export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -12,7 +15,6 @@ export default function Navigation() {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
     };
-
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -45,92 +47,105 @@ export default function Navigation() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
 
-          {/* Logo */}
+          {/* Logo Section */}
           <button
             onClick={() => scrollToSection('#home')}
-            className="text-left"
+            className="flex items-center gap-2 sm:gap-3 text-left group transition-all"
           >
-            <h1 className="text-2xl font-bold text-orange-500">
-              Creative Group
-            </h1>
-            <p className="text-xs text-gray-400">
-              Construction & Builders
-            </p>
+            {/* The Circle Container */}
+            <div className="relative h-10 w-10 sm:h-12 sm:w-12 flex-shrink-0 overflow-hidden rounded-full border-2 border-orange-500 bg-white">
+              <Image
+                src={LogoImg}
+                alt="Creative Group Logo"
+                fill
+                className="object-cover transform group-hover:scale-110 transition-transform duration-300"
+              />
+            </div>
+            
+            {/* Company Name & Tagline */}
+            <div className="flex flex-col justify-center">
+              <h1 className="text-lg sm:text-xl md:text-2xl font-bold text-orange-500 leading-none">
+                Creative Group
+              </h1>
+              <p className="text-[9px] sm:text-[11px] text-gray-400 uppercase tracking-tighter sm:tracking-normal mt-1">
+                Construction & Builders
+              </p>
+            </div>
           </button>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-6 lg:space-x-8">
             {navLinks.map((link) => (
               <button
                 key={link.name}
                 onClick={() => scrollToSection(link.href)}
-                className="text-gray-300 hover:text-orange-500 transition-colors font-medium"
+                className="text-gray-300 hover:text-orange-500 transition-colors font-medium text-sm lg:text-base"
               >
                 {link.name}
               </button>
             ))}
           </div>
 
-          {/* Desktop Right Side */}
+          {/* Desktop Contact */}
           <div className="hidden md:flex items-center space-x-4">
             <a
               href="tel:9770747074"
-              className="flex items-center text-sm text-gray-400 hover:text-orange-500"
+              className="flex items-center text-sm text-gray-400 hover:text-orange-500 transition-colors"
             >
               <Phone className="h-4 w-4 mr-1" />
-              <span>9770747074</span>
+              <span className="hidden lg:inline">9770747074</span>
             </a>
 
             <Button
               onClick={() => scrollToSection('#contact')}
-              className="bg-orange-500 hover:bg-orange-600 text-black font-semibold"
+              className="bg-orange-500 hover:bg-orange-600 text-black font-bold"
             >
               Get Quote
             </Button>
           </div>
 
-          {/* Mobile Button */}
-          <div className="md:hidden">
+          {/* Mobile Menu Toggle */}
+          <div className="md:hidden flex items-center">
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="text-gray-300 hover:text-orange-500"
+              className="p-2 text-gray-300 hover:text-orange-500 transition-colors"
+              aria-label="Toggle menu"
             >
               {isMobileMenuOpen ? (
-                <X className="h-6 w-6" />
+                <X className="h-7 w-7" />
               ) : (
-                <Menu className="h-6 w-6" />
+                <Menu className="h-7 w-7" />
               )}
             </button>
           </div>
         </div>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu Overlay */}
       {isMobileMenuOpen && (
-        <div className="md:hidden bg-black border-t border-gray-800">
-          <div className="px-4 pt-2 pb-4 space-y-2">
+        <div className="md:hidden bg-black/95 border-t border-gray-800 animate-in fade-in slide-in-from-top-4 duration-300">
+          <div className="px-6 py-8 space-y-4 text-center">
             {navLinks.map((link) => (
               <button
                 key={link.name}
                 onClick={() => scrollToSection(link.href)}
-                className="block w-full text-left px-3 py-2 text-gray-300 hover:bg-orange-500 hover:text-black rounded-md transition-colors"
+                className="block w-full text-xl text-gray-300 hover:text-orange-500 py-2 border-b border-gray-900"
               >
                 {link.name}
               </button>
             ))}
 
-            <div className="pt-4 space-y-2">
+            <div className="pt-6 space-y-4">
               <a
                 href="tel:9770747074"
-                className="flex items-center px-3 py-2 text-sm text-gray-400 hover:text-orange-500"
+                className="flex items-center justify-center text-orange-500 text-lg"
               >
-                <Phone className="h-4 w-4 mr-2" />
+                <Phone className="h-5 w-5 mr-2" />
                 9770747074
               </a>
-
               <Button
                 onClick={() => scrollToSection('#contact')}
-                className="w-full bg-orange-500 hover:bg-orange-600 text-black font-semibold"
+                className="w-full bg-orange-500 hover:bg-orange-600 text-black font-bold py-6 text-lg"
               >
                 Get Quote
               </Button>
