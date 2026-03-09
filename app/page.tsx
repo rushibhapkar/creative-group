@@ -1,5 +1,7 @@
-'use client';
+//app\page.tsx
 
+'use client';
+// Absolute imports (assuming @ points to project root)
 import Navigation from '@/components/navigation';
 import HeroSection from '@/components/hero-section';
 import AboutSection from '@/components/about-section';

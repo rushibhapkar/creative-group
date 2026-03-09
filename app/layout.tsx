@@ -1,3 +1,6 @@
+//app\layout.tsx
+
+
 import './globals.css';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
@@ -9,7 +12,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(
     process.env.NODE_ENV === 'production' 
       ? 'https://creativegroup.com' // Replace with the client's actual domain later
-      : 'http://localhost:3001'
+      : 'http://localhost:3000'
   ),
 
   // 2. Updated Branding for Creative Group
