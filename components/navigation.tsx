@@ -3,7 +3,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import { Menu, X, Phone, ChevronRight } from 'lucide-react';
 import Image from 'next/image';
-import LogoImg from './assests/logo.jpg.jpeg';
+import LogoImg from './assests/logo.jpeg';
 
 const navLinks = [
   { name: 'Home', href: '#home' },
