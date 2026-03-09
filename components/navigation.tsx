@@ -59,15 +59,15 @@ export default function Navigation() {
               aria-label="Go to home"
             >
               <div className="relative h-11 w-11 flex-shrink-0 overflow-hidden rounded-full border-2 border-orange-500 bg-white shadow-[0_0_10px_rgba(249,115,22,0.2)] transition-all duration-200 group-hover:ring-2 group-hover:ring-orange-500/40">
-                // Inside navigation.tsx
-<Image
-  src="/assests/logo.jpeg" // MUST be exactly what you see in your 'public' folder
-  alt="Creative Group Logo"
-  fill
-  priority
-  className="object-cover group-hover:scale-110 transition-transform duration-300"
-/>
-              </div>
+  <Image
+    src="/assests/logo.jpeg"
+    alt="Creative Group Logo"
+    fill
+    priority
+    className="object-cover group-hover:scale-110 transition-transform duration-300"
+  />
+</div>
+
               <div className="flex flex-col leading-none">
                 <span className="text-xl font-extrabold tracking-tight text-orange-500 group-hover:text-orange-400 transition-colors duration-150">
                   Creative Group
