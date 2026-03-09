@@ -5,7 +5,7 @@ import { MapPin, Calendar, Ruler } from 'lucide-react';
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Badge } from '@/components/ui/badge';
 import { projects } from '@/app/data/projectsData';
-
+import Image from 'next/image';
 export default function ProjectsSection() {
   const [selectedCategory, setSelectedCategory] = useState('all');
 
@@ -64,11 +64,13 @@ export default function ProjectsSection() {
               className="bg-zinc-900 border border-zinc-800 rounded-lg overflow-hidden hover:border-orange-500 hover:shadow-orange-500/20 hover:shadow-2xl transition-all duration-300 group"
             >
               <div className="relative h-64 overflow-hidden">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                />
+               <Image
+    src={project.image}
+    alt={project.title}
+    fill
+    sizes="(max-width: 768px) 100vw, 33vw"
+    className="object-cover group-hover:scale-110 transition-transform duration-500"
+  />
 
                 <div className="absolute top-4 right-4">
                   <Badge

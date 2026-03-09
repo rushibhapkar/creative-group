@@ -58,7 +58,7 @@ export default function Navigation() {
             >
               <div className="relative h-11 w-11 flex-shrink-0 overflow-hidden rounded-full border-2 border-orange-500 bg-white shadow-[0_0_10px_rgba(249,115,22,0.2)] transition-all duration-200 group-hover:ring-2 group-hover:ring-orange-500/40">
                 <Image
-                  src="/logo.jpeg" // Pointing to the public folder
+                  src="/assests/logo.jpeg" // Updated path to point to public/assests/logo.jpeg
                   alt="Creative Group Logo"
                   fill
                   priority
