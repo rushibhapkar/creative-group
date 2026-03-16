@@ -1,5 +1,4 @@
-//app\layout.tsx
-
+// app/layout.tsx
 
 import './globals.css';
 import type { Metadata } from 'next';
@@ -7,41 +6,52 @@ import { Inter } from 'next/font/google';
 
 const inter = Inter({ subsets: ['latin'] });
 
+// The Cloudinary logo link you provided
+const LOGO_URL = 'https://res.cloudinary.com/demz8cf5k/image/upload/v1773681264/uploads/jzfra5zu7fu7yjvaiv1q.jpg';
+
 export const metadata: Metadata = {
-  // 1. ADD THIS: This clears the warning and sets the foundation for SEO
+  // 1. Foundation for SEO
   metadataBase: new URL(
     process.env.NODE_ENV === 'production' 
-      ? 'https://creativegroup.com' // Replace with the client's actual domain later
+      ? 'https://creativegroup.com' // Replace with your actual domain later
       : 'http://localhost:3000'
   ),
 
-  // 2. Updated Branding for Creative Group
+  // 2. Updated Branding
   title: 'Creative Group | Premium Real Estate Developers & Builders',
-  description: 'Creative Group is a premier construction firm with 25+ years of excellence in residential, commercial, and turnkey projects. We build with quality and trust.',
-  keywords: ['Creative Group', 'construction', 'builders', 'real estate Pune', 'commercial construction', 'luxury residential'],
+  description: 'Creative Group is a premier construction firm with 12+ years of excellence in Baramati. We build with quality and trust.',
+  keywords: ['Creative Group', 'construction', 'builders', 'Baramati Real Estate', 'commercial construction', 'Sandip Jaypatre'],
   
+  // 3. ADD THIS: This makes the logo visible in Browser Tabs and Search Snippets
+  icons: {
+    icon: LOGO_URL,
+    shortcut: LOGO_URL,
+    apple: LOGO_URL,
+  },
+
+  // 4. Social Media Previews (WhatsApp, LinkedIn, Facebook)
   openGraph: {
     title: 'Creative Group - Construction & Builders',
-    description: 'Constructing excellence for over 25 years. Your vision, our expertise.',
+    description: 'Constructing excellence in Baramati. Your vision, our expertise.',
     url: 'https://creativegroup.com',
     siteName: 'Creative Group',
     images: [
       {
-        url: 'https://images.pexels.com/photos/1216589/pexels-photo-1216589.jpeg?auto=compress&cs=tinysrgb&w=1200',
-        width: 1200,
-        height: 630,
-        alt: 'Creative Group Construction Project',
+        url: LOGO_URL, // Using your logo as the share image
+        width: 800,
+        height: 800,
+        alt: 'Creative Group Logo',
       },
     ],
-    locale: 'en_US',
+    locale: 'en_IN',
     type: 'website',
   },
   
   twitter: {
-    card: 'summary_large_image',
+    card: 'summary', // Changed to 'summary' because your logo is likely square
     title: 'Creative Group - Construction & Builders',
     description: 'Building your dream with quality and trust.',
-    images: ['https://images.pexels.com/photos/1216589/pexels-photo-1216589.jpeg?auto=compress&cs=tinysrgb&w=1200'],
+    images: [LOGO_URL],
   },
 };
 

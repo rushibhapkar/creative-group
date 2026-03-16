@@ -38,7 +38,6 @@ export const footerLinks = {
   resources: [
     { name: "Project Gallery", href: "#projects" },
     { name: "Drone Showcase", href: "#drone" },
-    { name: "Client Testimonials", href: "#testimonials" },
     { name: "FAQs", href: "#faq" },
   ],
 };
@@ -46,22 +45,18 @@ export const footerLinks = {
 export const socialLinks = [
   {
     icon: Facebook,
-    href: "https://facebook.com",
+    href: "https://www.facebook.com/creative.group.baramati?mibextid=ZbWKwL&utm_source=ig&utm_medium=social&utm_content=link_in_bio",
     label: "Facebook",
   },
   {
     icon: Instagram,
-    href: "https://instagram.com",
+    href: "https://www.instagram.com/creative_group_5855_official/",
     label: "Instagram",
   },
-  {
-    icon: Linkedin,
-    href: "https://linkedin.com",
-    label: "LinkedIn",
-  },
+
   {
     icon: Youtube,
-    href: "https://youtube.com",
+    href: "https://www.youtube.com/@Creative_Groupp",
     label: "YouTube",
   },
 ];

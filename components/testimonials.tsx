@@ -26,7 +26,7 @@ export default function Testimonials() {
           </p>
         </div>
 
-        {/* Testimonials Grid */}
+        {/* Testimonials Grid
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {testimonials.map((testimonial) => (
             <Card
@@ -35,7 +35,7 @@ export default function Testimonials() {
             >
               <CardContent className="p-6">
 
-                {/* Quote + Rating */}
+                {/* Quote + Rating 
                 <div className="flex items-center justify-between mb-4">
                   <Quote className="h-10 w-10 text-yellow-500 opacity-20" />
 
@@ -49,12 +49,12 @@ export default function Testimonials() {
                   </div>
                 </div>
 
-                {/* Text */}
+                {/* Text *
                 <p className="text-gray-700 mb-6 leading-relaxed">
                   {testimonial.text}
                 </p>
 
-                {/* User */}
+                {/* User 
                 <div className="border-t pt-4 mt-4">
                   <div className="flex items-center">
                     <Avatar className="h-12 w-12 mr-3">
@@ -89,7 +89,7 @@ export default function Testimonials() {
               </CardContent>
             </Card>
           ))}
-        </div>
+        </div> */}
 
         {/* Stats Section */}
         <div className="mt-16 text-center">

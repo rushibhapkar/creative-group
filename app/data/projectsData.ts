@@ -8,7 +8,7 @@ export const projects = [
     area: "3,500 sq ft",
     date: "March 2024",
     // Fixed: New working link for modern villa
-    image: "https://images.unsplash.com/photo-1613490493576-7fde63acd811?q=60&w=800&auto=format&fit=crop",
+    image: "https://res.cloudinary.com/demz8cf5k/image/upload/v1773677041/uploads/d8lfvzuwrfd7eqjvdcnc.jpg",
     description: "A luxury 4BHK residence featuring a contemporary open-floor plan and custom elevation.",
   },
   {
@@ -19,7 +19,7 @@ export const projects = [
     location: "Pune, Maharashtra",
     area: "12,000 sq ft",
     date: "Expected 2025",
-    image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=60&w=800&auto=format&fit=crop",
+    image: "https://res.cloudinary.com/demz8cf5k/image/upload/v1773676992/uploads/ehvubszknxo43i6drlgs.jpg",
     description: "A state-of-the-art office complex designed with a glass curtain wall and smart automation.",
   },
   {
@@ -30,7 +30,7 @@ export const projects = [
     location: "Akluj, Maharashtra",
     area: "1,800 sq ft",
     date: "January 2024",
-    image: "https://images.unsplash.com/photo-1613977257363-707ba9348227?q=60&w=800&auto=format&fit=crop",
+    image: "https://res.cloudinary.com/demz8cf5k/image/upload/v1773676967/uploads/nsmq05pve9iuanmg66zh.jpg",
     description: "Complete structural overhaul integrating modern minimalist interiors.",
   },
   {
@@ -41,7 +41,7 @@ export const projects = [
     location: "Phaltan, Maharashtra",
     area: "45,000 sq ft",
     date: "Completion 2026",
-    image: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?q=60&w=800&auto=format&fit=crop",
+    image: "https://res.cloudinary.com/demz8cf5k/image/upload/v1773676840/uploads/h1zu93kcmkuudsc3xuqk.jpg",
     description: "A multi-story residential project focused on affordable luxury and amenities.",
   },
   {
@@ -53,7 +53,7 @@ export const projects = [
     area: "8,500 sq ft",
     date: "November 2023",
     // Fixed: New working link for commercial building
-    image: "https://images.unsplash.com/photo-1519567241046-7f570eee3ce6?q=60&w=800&auto=format&fit=crop",
+    image: "https://res.cloudinary.com/demz8cf5k/image/upload/v1773677208/uploads/pww7wnoxflvnyywyavvm.jpg",
     description: "Architectural design for a high-traffic retail space with modern facade treatments.",
   },
   {
@@ -64,7 +64,7 @@ export const projects = [
     location: "Baramati, Maharashtra",
     area: "1,200 sq ft",
     date: "February 2024",
-    image: "https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?q=60&w=800&auto=format&fit=crop",
+    image: "https://res.cloudinary.com/demz8cf5k/image/upload/v1773677292/uploads/zvjypnz7vw2npnliavzb.jpg",
     description: "Modernized a kitchen and living area into an expansive open-concept space.",
   }
 ];
