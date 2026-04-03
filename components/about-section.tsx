@@ -46,7 +46,7 @@ export default function AboutSection() {
           <div className="relative">
             <div className="relative h-[600px] rounded-xl overflow-hidden shadow-2xl">
               <img
-                src="https://res.cloudinary.com/demz8cf5k/image/upload/v1773677648/uploads/wwuuqtngu7hschrv8kho.png"
+                src="https://res.cloudinary.com/demz8cf5k/image/upload/v1775236069/uploads/qygp47cympdmxeascfj5.jpg"
                 alt="Sandip Jaypatre - Founder & Director, Creative Group"
                 className="w-full h-full object-cover object-top"
               />

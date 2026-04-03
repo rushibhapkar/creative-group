@@ -13,6 +13,7 @@ import Testimonials from '@/components/testimonials';
 import ContactSection from '@/components/contact-section';
 import Footer from '@/components/footer';
 import { Toaster } from '@/components/ui/toaster';
+import GallerySection from '@/components/gallery/GallerySection';
 
 export default function Home() {
   return (
@@ -21,7 +22,8 @@ export default function Home() {
       <HeroSection />
       <AboutSection />
       <ServicesSection />
-      <ProjectsSection />
+      {/* <ProjectsSection /> */}
+      <GallerySection />
       <DroneShowcase />
       <WhyChooseUs />
       <Testimonials />
