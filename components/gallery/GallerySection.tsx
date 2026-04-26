@@ -15,16 +15,16 @@ import Lightbox from './Lightbox';
 type FilterValue = 'all' | 'complexes' | 'bungalows';
 
 const FILTERS: { value: FilterValue; label: string; count?: number }[] = [
-  { value: 'all',        label: 'All Projects' },
-  { value: 'complexes',  label: 'Complexes',  count: complexPhotos.length },
-  { value: 'bungalows',  label: 'Bungalows',  count: bungalowPhotos.length },
+  { value: 'all', label: 'All Projects' },
+  { value: 'complexes', label: 'Complexes', count: complexPhotos.length },
+  { value: 'bungalows', label: 'Bungalows', count: bungalowPhotos.length },
 ];
 
 export default function GallerySection() {
-  const [filter, setFilter]                 = useState<FilterValue>('all');
+  const [filter, setFilter] = useState<FilterValue>('all');
   const [lightboxPhotos, setLightboxPhotos] = useState<GalleryPhoto[]>([]);
-  const [lightboxIndex, setLightboxIndex]   = useState(0);
-  const [lightboxOpen, setLightboxOpen]     = useState(false);
+  const [lightboxIndex, setLightboxIndex] = useState(0);
+  const [lightboxOpen, setLightboxOpen] = useState(false);
   const [headingVisible, setHeadingVisible] = useState(false);
   const headingRef = useRef<HTMLDivElement>(null);
 
@@ -42,17 +42,17 @@ export default function GallerySection() {
 
   const closeLightbox = useCallback(() => setLightboxOpen(false), []);
 
-  const handleComplexClick  = (i: number) => openLightbox(complexPhotos,  i);
+  const handleComplexClick = (i: number) => openLightbox(complexPhotos, i);
   const handleBungalowClick = (i: number) => openLightbox(bungalowPhotos, i);
 
   return (
     <>
       {/* Google Fonts */}
-      <style>{`
+      {/* <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Syne:wght@700;800;900&family=DM+Sans:wght@300;400;500;600&display=swap');
         .scrollbar-hide::-webkit-scrollbar { display: none; }
         .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
-      `}</style>
+      `}</style> */}
 
       <section
         id="gallery"
@@ -126,25 +126,24 @@ export default function GallerySection() {
           </div>
 
           {/* ── Filter tabs ──────────────────────────────────────── */}
-          <div className="flex gap-1 mb-14 p-1 rounded-xl bg-white/[0.03] border border-white/[0.06] w-fit">
+          <div className="flex gap-1 mb-14 p-1 rounded-xl bg-white/[0.03] border border-white/[0.06] w-full overflow-x-auto scrollbar-hide">
             {FILTERS.map((f) => (
               <button
                 key={f.value}
                 onClick={() => setFilter(f.value)}
                 className={`
-                  relative px-5 py-2.5 rounded-lg text-sm font-semibold transition-all duration-300
+                  relative px-5 py-2.5 rounded-lg text-sm font-semibold transition-all duration-300 whitespace-nowrap flex-shrink-0
                   ${filter === f.value
                     ? 'bg-orange-500 text-black shadow-lg shadow-orange-500/20'
                     : 'text-zinc-400 hover:text-white'
                   }
-                `}
-                style={{ fontFamily: "'Syne', sans-serif" }}
+                  `}
+                style={{ fontFamily: "var(--font-syne), sans-serif" }}
               >
                 {f.label}
                 {f.count !== undefined && (
-                  <span className={`ml-2 text-xs px-1.5 py-0.5 rounded-full ${
-                    filter === f.value ? 'bg-black/20 text-black/70' : 'bg-white/10 text-zinc-500'
-                  }`}>
+                  <span className={`ml-2 text-xs px-1.5 py-0.5 rounded-full ${filter === f.value ? 'bg-black/20 text-black/70' : 'bg-white/10 text-zinc-500'
+                    }`}>
                     {f.count}
                   </span>
                 )}

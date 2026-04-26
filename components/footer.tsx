@@ -7,9 +7,14 @@ import {
   socialLinks,
   certifications,
 } from "@/app/data/footerData";
+import { useEffect, useState } from 'react';
 
 export default function Footer() {
-  const currentYear = new Date().getFullYear();
+const [currentYear, setCurrentYear] = useState<number | null>(null);
+
+useEffect(() => {
+  setCurrentYear(new Date().getFullYear());
+}, []);
 
   const scrollToSection = (href: string) => {
     if (href.startsWith('#')) {
@@ -121,7 +126,7 @@ export default function Footer() {
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
             <div className="text-center md:text-left">
               <p className="text-gray-500 text-sm">
-                © {currentYear} {companyInfo.name}. All rights reserved.
+© {currentYear ?? new Date().getFullYear()} {companyInfo.name}. All rights reserved.
               </p>
               <p className="text-gray-600 text-xs mt-1">
                 Founded by {companyInfo.owner} • {companyInfo.experience}

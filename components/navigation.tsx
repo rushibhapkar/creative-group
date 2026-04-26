@@ -73,7 +73,7 @@ export default function Navigation() {
                   Creative Group
                 </span>
                 <span className="text-[10px] font-semibold text-gray-400 uppercase tracking-[0.18em] mt-[3px]">
-                  Construction & Builders
+Construction &amp; Builders
                 </span>
               </div>
             </button>
