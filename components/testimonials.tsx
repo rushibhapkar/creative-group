@@ -98,7 +98,7 @@ export default function Testimonials() {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               <div>
                 <div className="text-4xl font-bold text-yellow-600 mb-2">
-                  500+
+                  50+
                 </div>
                 <div className="text-sm text-gray-600">Happy Clients</div>
               </div>

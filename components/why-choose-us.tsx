@@ -113,7 +113,7 @@ export default function WhyChooseUs() {
                 </div>
 
                 <div className="text-sm text-gray-600 mt-1">
-                  Based on 500+ completed projects
+                  Based on 150+ completed projects
                 </div>
 
               </div>
