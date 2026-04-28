@@ -22,22 +22,35 @@
 // module.exports = nextConfig;
 
 
+// /** @type {import('next').NextConfig} */
+// const isProd = process.env.NODE_ENV === 'production';
+
+// const nextConfig = {
+//   output: 'export',
+//   images: {
+//     unoptimized: true,
+//   },
+//   basePath: isProd ? '/creative-group' : '',
+//   assetPrefix: isProd ? '/creative-group' : '',
+
+//   eslint: {
+//     ignoreDuringBuilds: true,
+//   },
+//   typescript: {
+//     ignoreBuildErrors: true,
+//   },
+// };
+
+// module.exports = nextConfig
+//;
+
 /** @type {import('next').NextConfig} */
-const isProd = process.env.NODE_ENV === 'production';
-
 const nextConfig = {
-  output: 'export',
+  output: 'export',      // Required for static hosting
+  basePath: '',          // Set this to empty for custom domains
+  assetPrefix: '',       // Set this to empty as well
   images: {
-    unoptimized: true,
-  },
-  basePath: isProd ? '/creative-group' : '',
-  assetPrefix: isProd ? '/creative-group' : '',
-
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
-  typescript: {
-    ignoreBuildErrors: true,
+    unoptimized: true,   // Required for static export
   },
 };
 
