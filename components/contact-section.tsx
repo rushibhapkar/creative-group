@@ -93,7 +93,7 @@ export default function ContactSection() {
             Contact Us
           </span>
           <h2 className="text-4xl md:text-5xl font-bold text-white mt-4 mb-6">
-            Let's Build Something Together
+            Let&apos;s Build Something Together
           </h2>
           <p className="text-xl text-gray-400 max-w-3xl mx-auto">
             Ready to start your construction project? Get in touch with us today

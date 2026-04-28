@@ -83,7 +83,7 @@ export default function ServicesSection() {
               </h3>
 
               <p className="text-black/80 text-lg">
-                Every project is unique. Let's discuss your specific
+                Every project is unique. Let&apos;s discuss your specific
                 requirements and create a tailored solution that exceeds
                 your expectations.
               </p>
