@@ -176,16 +176,17 @@ export default function Lightbox({ photos, initialIndex, onClose }: LightboxProp
           <p className="text-white font-semibold text-sm" style={{ fontFamily: "'Syne', sans-serif" }}>
             {current.alt}
           </p>
-          {current.sqFeet > 0 ? (
-            <div className="flex items-center gap-1.5 mt-1">
-              <Ruler className="w-3 h-3 text-orange-500" />
-              <span className="text-orange-400 text-xs font-bold tracking-wider">
-                {current.sqFeet.toLocaleString()} sq ft
-              </span>
-            </div>
-          ) : (
-            <p className="text-white/30 text-xs mt-1 tracking-widest uppercase">Area not specified</p>
-          )}
+{/* Change the condition to check if current.sqFeet exists first */}
+{current.sqFeet !== undefined && current.sqFeet > 0 ? (
+  <div className="flex items-center gap-1.5 mt-1">
+    <Ruler className="w-3 h-3 text-orange-500" />
+    <span className="text-orange-400 text-xs font-bold tracking-wider">
+      {current.sqFeet.toLocaleString()} sq ft
+    </span>
+  </div>
+) : (
+  <p className="text-white/30 text-xs mt-1 tracking-widest uppercase">Area not specified</p>
+)}
         </div>
 
         <div className="text-right">

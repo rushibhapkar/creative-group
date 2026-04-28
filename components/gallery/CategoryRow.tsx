@@ -122,8 +122,7 @@ export default function CategoryRow({ label, photos, accentColor, onPhotoClick }
               {/* Info */}
               <div className="absolute bottom-0 left-0 right-0 p-3 translate-y-3 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-400">
                 <p className="text-white text-xs font-semibold truncate">{photo.alt}</p>
-                {photo.sqFeet > 0 && (
-                  <div className="flex items-center gap-1 mt-1">
+{photo.sqFeet && photo.sqFeet > 0 && (                  <div className="flex items-center gap-1 mt-1">
                     <Ruler className="w-2.5 h-2.5 text-orange-400" />
                     <span className="text-orange-400 text-xs font-bold">{photo.sqFeet.toLocaleString()} sq ft</span>
                   </div>

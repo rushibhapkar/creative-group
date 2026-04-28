@@ -10,6 +10,16 @@ export interface GalleryPhoto {
   sqFeet?: number; // optional — omit when unknown/zero
   title?: string;
 }
+// Add these types to your data file
+export interface Project extends GalleryPhoto {
+  title: string; // Now required for the UI
+  description: string;
+  location: string;
+  area: string;
+  status: 'completed' | 'ongoing';
+  date: string;
+  image: string; // The UI component uses 'image' instead of 'src'
+}
 
 // Replace src values with your actual image paths from /public or your CDN
 export const galleryPhotos: GalleryPhoto[] = [
@@ -56,6 +66,15 @@ export const galleryPhotos: GalleryPhoto[] = [
   { id: 57, category: 'bungalows', src: 'https://res.cloudinary.com/demz8cf5k/image/upload/v1775226246/uploads/hmotg1toqgq2oazf9gdo.jpg', alt: 'Design showcase',       width: 1200, height: 800  },
   { id: 58, category: 'bungalows', src: 'https://res.cloudinary.com/demz8cf5k/image/upload/v1775226249/uploads/rhishgvpeshbxjimpoxy.jpg', alt: 'Final project view',     width: 1200, height: 900  },
 ];
-
+export const projects: Project[] = galleryPhotos.map(photo => ({
+  ...photo,
+  title: photo.title || photo.alt,
+  description: `High-quality construction and design for ${photo.category}.`,
+  location: "Project Location", // Default values since these aren't in your array
+  area: photo.sqFeet ? `${photo.sqFeet.toLocaleString()} sq ft` : "Contact for details",
+  status: 'completed', // Defaulting to completed
+  date: "2024",
+  image: photo.src // Bridging 'src' to 'image'
+}));
 export const complexPhotos  = galleryPhotos.filter(p => p.category === 'complexes');
 export const bungalowPhotos = galleryPhotos.filter(p => p.category === 'bungalows');

@@ -82,19 +82,22 @@ useEffect(() => {
           <div className="absolute top-0 left-0 w-[2px] h-0 bg-orange-500 group-hover:h-full transition-all duration-500 ease-out delay-100" />
 
           {/* Info overlay */}
-          <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 ease-out">
-            <p className="text-white text-sm font-medium leading-tight truncate" style={{ fontFamily: "'DM Sans', sans-serif" }}>
-              {photo.alt}
-            </p>
-            {photo.sqFeet > 0 && (
-              <div className="flex items-center gap-1.5 mt-1.5">
-                <Ruler className="w-3 h-3 text-orange-400" />
-                <span className="text-orange-400 text-xs font-bold tracking-wider">
-                  {photo.sqFeet.toLocaleString()} sq ft
-                </span>
-              </div>
-            )}
-          </div>
+{/* Info overlay */}
+<div className="absolute bottom-0 left-0 right-0 p-4 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 ease-out">
+  <p className="text-white text-sm font-medium leading-tight truncate" style={{ fontFamily: "'DM Sans', sans-serif" }}>
+    {photo.alt}
+  </p>
+  
+  {/* Add the "photo.sqFeet &&" check here */}
+  {photo.sqFeet && photo.sqFeet > 0 && (
+    <div className="flex items-center gap-1.5 mt-1.5">
+      <Ruler className="w-3 h-3 text-orange-400" />
+      <span className="text-orange-400 text-xs font-bold tracking-wider">
+        {photo.sqFeet.toLocaleString()} sq ft
+      </span>
+    </div>
+  )}
+</div>
 
           {/* Expand icon */}
           <div className="absolute top-3 right-3 w-8 h-8 rounded-full bg-black/50 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 scale-75 group-hover:scale-100">

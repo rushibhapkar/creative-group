@@ -4,8 +4,7 @@ import { useState } from 'react';
 import { MapPin, Calendar, Ruler } from 'lucide-react';
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Badge } from '@/components/ui/badge';
-import { projects } from '@/app/data/projectsData';
-import Image from 'next/image';
+import { projects, type Project } from '@/app/data/projectsData';import Image from 'next/image';
 export default function ProjectsSection() {
   const [selectedCategory, setSelectedCategory] = useState('all');
 
