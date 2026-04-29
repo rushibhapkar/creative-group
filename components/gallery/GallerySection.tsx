@@ -55,7 +55,7 @@ export default function GallerySection() {
       `}</style> */}
 
       <section
-        id="gallery"
+        id="projects"
         className="relative py-24 overflow-hidden"
         style={{
           background: '#080808',

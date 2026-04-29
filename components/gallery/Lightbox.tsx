@@ -87,46 +87,50 @@ export default function Lightbox({ photos, initialIndex, onClose }: LightboxProp
       />
 
       {/* Top bar */}
-      <div className="relative z-10 flex items-center justify-between px-6 py-4 border-b border-white/5">
-        {/* Brand / category */}
-        <div className="flex items-center gap-3">
-          <div className="w-2 h-2 rounded-full bg-orange-500 animate-pulse" />
-          <span className="text-white/40 text-xs tracking-[0.2em] uppercase font-medium" style={{ fontFamily: "'Syne', sans-serif" }}>
-            {current.category}
-          </span>
-        </div>
+      {/* Top bar */}
+<div className="relative z-10 flex flex-col border-b border-white/5">
+  {/* Row 1: category + controls */}
+  <div className="flex items-center justify-between px-6 py-3">
+    {/* Brand / category */}
+    <div className="flex items-center gap-3">
+      <div className="w-2 h-2 rounded-full bg-orange-500 animate-pulse flex-shrink-0" />
+      <span className="text-white/40 text-xs tracking-[0.2em] uppercase font-medium" style={{ fontFamily: "'Syne', sans-serif" }}>
+        {current.category}
+      </span>
+    </div>
 
-        {/* Counter */}
-        <div className="absolute left-1/2 -translate-x-1/2 flex items-center gap-1">
-          {photos.map((_, i) => (
-            <button
-              key={i}
-              onClick={() => { setImgVisible(false); setTimeout(() => { setIndex(i); setTimeout(() => setImgVisible(true), 60); }, 200); }}
-              className={`rounded-full transition-all duration-300 ${
-                i === index
-                  ? 'w-6 h-1.5 bg-orange-500'
-                  : 'w-1.5 h-1.5 bg-white/20 hover:bg-white/50'
-              }`}
-            />
-          ))}
-        </div>
+    {/* Controls */}
+    <div className="flex items-center gap-2">
+      <button
+        onClick={() => setZoomed((z) => !z)}
+        className="w-9 h-9 rounded-full border border-white/10 flex items-center justify-center text-white/50 hover:text-white hover:border-white/30 transition-all duration-200"
+      >
+        {zoomed ? <ZoomOut className="w-4 h-4" /> : <ZoomIn className="w-4 h-4" />}
+      </button>
+      <button
+        onClick={handleClose}
+        className="w-9 h-9 rounded-full border border-white/10 flex items-center justify-center text-white/50 hover:text-white hover:border-orange-500 hover:text-orange-400 transition-all duration-200"
+      >
+        <X className="w-4 h-4" />
+      </button>
+    </div>
+  </div>
 
-        {/* Controls */}
-        <div className="flex items-center gap-2">
-          <button
-            onClick={() => setZoomed((z) => !z)}
-            className="w-9 h-9 rounded-full border border-white/10 flex items-center justify-center text-white/50 hover:text-white hover:border-white/30 transition-all duration-200"
-          >
-            {zoomed ? <ZoomOut className="w-4 h-4" /> : <ZoomIn className="w-4 h-4" />}
-          </button>
-          <button
-            onClick={handleClose}
-            className="w-9 h-9 rounded-full border border-white/10 flex items-center justify-center text-white/50 hover:text-white hover:border-orange-500 hover:text-orange-400 transition-all duration-200"
-          >
-            <X className="w-4 h-4" />
-          </button>
-        </div>
-      </div>
+  {/* Row 2: dots — own row, never overlaps */}
+  <div className="flex items-center justify-center gap-1 pb-3 px-6 overflow-x-auto scrollbar-hide">
+    {photos.map((_, i) => (
+      <button
+        key={i}
+        onClick={() => { setImgVisible(false); setTimeout(() => { setIndex(i); setTimeout(() => setImgVisible(true), 60); }, 200); }}
+        className={`rounded-full transition-all duration-300 flex-shrink-0 ${
+          i === index
+            ? 'w-6 h-1.5 bg-orange-500'
+            : 'w-1.5 h-1.5 bg-white/20 hover:bg-white/50'
+        }`}
+      />
+    ))}
+  </div>
+</div>
 
       {/* Main image area */}
       <div className="relative flex-1 flex items-center justify-center overflow-hidden">
